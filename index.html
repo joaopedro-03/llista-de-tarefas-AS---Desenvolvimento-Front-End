@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lista de Tarefas Interativa</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+    
+    <header class="bg-blue-600 text-white text-center p-5 shadow-lg">
+        <h1 class="text-3xl font-bold">
+            Lista de Tarefas Interativa
+        </h1>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-5">
+
+        
+        <section class="bg-white p-5 rounded shadow mb-5">
+
+            <h2 class="text-xl font-bold mb-4">
+                Nova Tarefa
+            </h2>
+
+            <div class="flex flex-col md:flex-row gap-3">
+
+                <input
+                    type="text"
+                    id="nomeTarefa"
+                    placeholder="Digite uma tarefa"
+                    class="border p-2 rounded flex-1"
+                >
+
+                <select
+                    id="prioridade"
+                    class="border p-2 rounded"
+                >
+                    <option value="alta">Alta</option>
+                    <option value="media">Média</option>
+                    <option value="baixa">Baixa</option>
+                </select>
+
+                <button
+                    id="btnAdicionar"
+                    type="button"
+                    class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+                >
+                    Adicionar
+                </button>
+
+            </div>
+
+            <p id="erro" class="text-red-500 mt-2 hidden"></p>
+
+        </section>
+
+        
+        <section class="bg-white p-5 rounded shadow mb-5">
+
+            <h2 class="text-xl font-bold mb-3">
+                Prioridades
+            </h2>
+
+            <div class="flex flex-wrap gap-4">
+
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-red-500 rounded"></div>
+                    <span>Alta</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-yellow-400 rounded"></div>
+                    <span>Média</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <div class="w-5 h-5 bg-green-500 rounded"></div>
+                    <span>Baixa</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        
+        <section class="grid sm:grid-cols-2 gap-4 mb-5">
+
+            <div class="bg-blue-500 text-white p-4 rounded shadow text-center">
+
+                <h3 class="font-bold text-lg">
+                    Tarefas Pendentes
+                </h3>
+
+                <p
+                    id="contadorPendentes"
+                    class="text-3xl font-bold"
+                >
+                    0
+                </p>
+
+            </div>
+
+            <div class="bg-green-500 text-white p-4 rounded shadow text-center">
+
+                <h3 class="font-bold text-lg">
+                    Tarefas Concluídas
+                </h3>
+
+                <p
+                    id="contadorConcluidas"
+                    class="text-3xl font-bold"
+                >
+                    0
+                </p>
+
+            </div>
+
+        </section>
+
+        
+        <section class="grid lg:grid-cols-2 gap-5">
+
+            
+            <div class="bg-white p-5 rounded shadow">
+
+                <h2 class="text-xl font-bold mb-4">
+                    Tarefas Pendentes
+                </h2>
+
+                <div id="listaPendentes"></div>
+
+            </div>
+
+            
+            <div class="bg-white p-5 rounded shadow">
+
+                <h2 class="text-xl font-bold mb-4">
+                    Histórico de Concluídas
+                </h2>
+
+                <div id="listaConcluidas"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    
+    <script src="lista.js"></script>
+
+</body>
+
+</html>
